@@ -1,0 +1,646 @@
+
+<!DOCTYPE html>
+<html lang="en" >
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Task 4</title>
+        <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+        <link href="index.css" rel="stylesheet">
+    </head>
+    <body class="table-body">
+        <div class="text-center" id="header-task">
+            <h2 class="margin-bottom-1">Front-end (Table Responsive)</h2>
+            RSBCI Internship hands-on task microsite
+        </div>
+        <div class="panel">
+            <div class="table-caption">
+                <a id="table-title">Forbes Celebrities</a>
+            </div>
+            <div>
+                <div class="row">
+                    <div class="col-3 allFields">
+                        <div class="InputAddOn" >
+                            <label class="InputAddOn-item">Search By</label>
+                            <select id="searchBy" class="InputAddOn-field" name="selct">
+                                <option value="Year">Year</option>
+                                <option value="Rank">Rank</option>
+                                <option value="Recipient">Recipient</option>
+                                <option value="Country">Country</option>
+                                <option value="Career">Career</option>
+                                <option value="Tied">Tied</option>
+                                <option value="Title">Title</option>
+                            </select>                         
+                        </div>
+                    </div>  
+                    <input class="col-6 field-border" type="text" id="myInput" onkeyup="myFunction()" placeholder="Search...">  
+                    <div class="col-3">
+                        <div class="InputAddOn2" id="row-entries">
+                            <label class="InputAddOn-item2" for="searchByDropdown">Show</label>
+                            <select name="state" id="maxRows" class="InputAddOn-field2" onchange="myPage();">
+                                <option value="10">5</option>
+                                <option value="20">10</option>
+                                <option value="5000">All</option>
+                            </select>
+                            <label class="InputAddOn-field1" id="entries-label">entries</label>
+                        </div>
+                    </div>
+                    <div class="col-3 view-details">
+                        <div class="InputAddOn2" id="row-entries">
+                            <label class="InputAddOn-item2" for="searchByDropdown">Show</label>
+                            <select name="states" id="viewDetails" class="InputAddOn-field" onchange="myView();">
+                                <option value="horizontal"><a href="#">Horizontal</a></option>
+                                <option value="vertical">Vertical</option>
+                            </select>
+                            <button class="InputAddOn-field1" id="entries-label">entries</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="x-view" id="myDiv1">
+                    <table id="task-table" class="table-class">
+                        <thead role="rowgroup">
+                            <tr role="row">
+                                <th role="columnheader" onclick="sortBy(0)" scope="col"><a href="#" class="sort-by">Year</a></th>
+                                <th role="columnheader" onclick="sortBy(1)" scope="col"><a href="#" class="sort-by">Rank</a></th>
+                                <th role="columnheader" onclick="sortBy(2)" scope="col"><a href="#" class="sort-by">Recipient</a></th>
+                                <th role="columnheader" onclick="sortBy(3)" scope="col"><a href="#" class="sort-by">Country</a></th>
+                                <th role="columnheader" onclick="sortBy(4)" scope="col"><a href="#" class="sort-by">Career</a></th>
+                                <th role="columnheader" onclick="sortBy(5)" scope="col"><a href="#" class="sort-by">Tied</a></th>
+                                <th role="columnheader" onclick="sortBy(6)" scope="col"><a href="#" class="sort-by">Title</a></th>
+                                <th role="columnheader" scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody role="rowgroup">
+                            <tr role="row">
+                                <td role="cell">1999</td>
+                                <td role="cell">1</td>
+                                <td role="cell">Michael Jordan</td>
+                                <td role="cell">United States</td>
+                                <td role="cell">Sportsperson (Basketball)</td>
+                                <td role="cell">0</td>
+                                <td role="cell">Michael_Jordan</td>
+                                <td role="cell" class="text-center"><button id="actionButton" type="button" class="button button5 collapsible">+</button></td>
+                            </tr>                  
+                            <tr>
+                                <td colspan="8" id="info">
+                                    <table>
+                                        <tr>
+                                          <td style="font-weight: 700 !important;">Time In:</td>
+                                          <td>8:30 AM</td>
+                                        </tr>
+                                        <tr>
+                                          <td style="font-weight: 700 !important;">Time Out:</td>
+                                          <td>5:30 PM</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>1999</td>
+                                <td>2</td>
+                                <td>Oprah Winfrey</td>
+                                <td>United States</td>
+                                <td>Television Personality</td>
+                                <td>0</td>
+                                <td>Oprah_Winfrey</td>
+                                <td role="cell" class="text-center"><button id="actionButton" type="button" class="button button5 collapsible">+</button></td>
+                            </tr>      
+                            <tr>
+                                <td colspan="8" id="info">
+                                    <table>
+                                        <tr>
+                                          <td style="font-weight: 700 !important;">Time In:</td>
+                                          <td>8:30 AM</td>
+                                        </tr>
+                                        <tr>
+                                          <td style="font-weight: 700 !important;">Time Out:</td>
+                                          <td>12:00 PM</td>
+                                        </tr>
+                                        <tr>
+                                          <td style="font-weight: 700 !important;">Time In:</td>
+                                          <td>1:00 PM</td>
+                                        </tr>
+                                        <tr>
+                                          <td style="font-weight: 700 !important;">Time Out:</td>
+                                          <td>5:30 PM</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>1999</td>
+                                <td>3</td>
+                                <td>Leonardo DiCaprio</td>
+                                <td>United States</td>
+                                <td>Actor</td>
+                                <td>0</td>
+                                <td>Leonardo_DiCaprio</td>
+                                <td role="cell" class="text-center"><button id="actionButton" type="button" class="button button5 collapsible">+</button></td>
+                            </tr>	         
+                            <tr>
+                                <td colspan="8" id="info">
+                                    <table>
+                                        <tr>
+                                            <td style="font-weight: 700 !important;">Time In:</td>
+                                            <td>8:30 AM</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-weight: 700 !important;">Time Out:</td>
+                                            <td>10:00 AM</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-weight: 700 !important;">Time In:</td>
+                                            <td>10:00 AM</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-weight: 700 !important;">Time Out:</td>
+                                            <td>12:00 PM</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-weight: 700 !important;">Time In:</td>
+                                            <td>1:00 PM</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-weight: 700 !important;">Time Out:</td>
+                                            <td>3:00 PM</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-weight: 700 !important;">Time In:</td>
+                                            <td>3:00 PM</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-weight: 700 !important;">Time Out:</td>
+                                            <td>5:30 PM</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>1999</td>
+                                <td>4</td>
+                                <td>Jerry Seinfeld</td>
+                                <td>United States</td>
+                                <td>Actor</td>
+                                <td>0</td>
+                                <td>Jerry_Seinfeld</td>
+                                <td role="cell" class="text-center"><button id="actionButton" type="button" class="button button5 collapsible">+</button></td>
+                            </tr>	       
+                            <tr>
+                                <td colspan="8" id="info">
+                                    <table>
+                                        <tr>
+                                          <td style="font-weight: 700 !important;">Time In:</td>
+                                          <td>8:30 AM</td>
+                                        </tr>
+                                        <tr>
+                                          <td style="font-weight: 700 !important;">Time Out:</td>
+                                          <td>12:00 PM</td>
+                                        </tr>
+                                        <tr>
+                                          <td style="font-weight: 700 !important;">Time In:</td>
+                                          <td>1:00 PM</td>
+                                        </tr>
+                                        <tr>
+                                          <td style="font-weight: 700 !important;">Time Out:</td>
+                                          <td>5:30 PM</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>1999</td>
+                                <td>5</td>
+                                <td>Steven Spielberg</td>
+                                <td>United States</td>
+                                <td>Filmmaker</td>
+                                <td>0</td>
+                                <td>Steven_Spielberg</td>
+                                <td role="cell" class="text-center"><button id="actionButton" type="button" class="button button5 collapsible">+</button></td>
+                            </tr>       
+                            <tr>
+                                <td colspan="8" id="info">
+                                    <table>
+                                        <tr>
+                                          <td style="font-weight: 700 !important;">Time In:</td>
+                                          <td>8:30 AM</td>
+                                        </tr>
+                                        <tr>
+                                          <td style="font-weight: 700 !important;">Time Out:</td>
+                                          <td>5:30 PM</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>1999</td>
+                                <td>6</td>
+                                <td>Spice Girls</td>
+                                <td>United Kingdom</td>
+                                <td>Musicians</td>
+                                <td>0</td>
+                                <td>Spice_Girls</td>
+                                <td role="cell" class="text-center"><button id="actionButton" type="button" class="button button5 collapsible">+</button></td>
+                            </tr>       
+                            <tr>
+                                <td colspan="8" id="info">
+                                    <table>
+                                        <tr>
+                                          <td style="font-weight: 700 !important;">Time In:</td>
+                                          <td>8:30 AM</td>
+                                        </tr>
+                                        <tr>
+                                          <td style="font-weight: 700 !important;">Time Out:</td>
+                                          <td>10:00 AM</td>
+                                        </tr>
+                                        <tr>
+                                          <td style="font-weight: 700 !important;">Time In:</td>
+                                          <td>10:00 AM</td>
+                                        </tr>
+                                        <tr>
+                                          <td style="font-weight: 700 !important;">Time Out:</td>
+                                          <td>12:00 PM</td>
+                                        </tr>
+                                        <tr>
+                                          <td style="font-weight: 700 !important;">Time In:</td>
+                                          <td>1:00 PM</td>
+                                        </tr>
+                                        <tr>
+                                          <td style="font-weight: 700 !important;">Time Out:</td>
+                                          <td>5:30 PM</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>	
+                            <tr>
+                                <td>1999</td>
+                                <td>7</td>
+                                <td>Harrison Ford</td>
+                                <td>United States</td>
+                                <td>Actor</td>
+                                <td>0</td>
+                                <td>Harrison_Ford</td>
+                                <td role="cell" class="text-center"><button id="actionButton" type="button" class="button button5 collapsible">+</button></td>
+                            </tr>       
+                            <tr>
+                                <td colspan="8" id="info">
+                                    <table>
+                                        <tr>
+                                          <td style="font-weight: 700 !important;">Time In:</td>
+                                          <td>8:30 AM</td>
+                                        </tr>
+                                        <tr>
+                                          <td style="font-weight: 700 !important;">Time Out:</td>
+                                          <td>5:30 PM</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>1999</td>
+                                <td>8</td>
+                                <td>Robin Williams</td>
+                                <td>United States</td>
+                                <td>Actor</td>
+                                <td>0</td>
+                                <td>Robin_Williams</td>
+                                <td role="cell" class="text-center"><button id="actionButton" type="button" class="button button5 collapsible">+</button></td>
+                            </tr>       
+                            <tr>
+                                <td colspan="8" id="info">
+                                    <table>
+                                        <tr>
+                                          <td style="font-weight: 700 !important;">Time In:</td>
+                                          <td>8:30 AM</td>
+                                        </tr>
+                                        <tr>
+                                          <td style="font-weight: 700 !important;">Time Out:</td>
+                                          <td>5:30 PM</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>1999</td>
+                                <td>9</td>
+                                <td>Celine Dion</td>
+                                <td>Canada</td>
+                                <td>Musician</td>
+                                <td>0</td>
+                                <td>Celine_Dion</td>
+                                <td role="cell" class="text-center"><button id="actionButton" type="button" class="button button5 collapsible">+</button></td>
+                            </tr>       
+                            <tr>
+                                <td colspan="8" id="info">
+                                    <table>
+                                        <tr>
+                                          <td style="font-weight: 700 !important;">Time In:</td>
+                                          <td>8:30 AM</td>
+                                        </tr>
+                                        <tr>
+                                          <td style="font-weight: 700 !important;">Time Out:</td>
+                                          <td>5:30 PM</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>	
+                            <tr>
+                                <td>1999</td>
+                                <td>10</td>
+                                <td>The Rolling Stones</td>
+                                <td>United Kingdom</td>
+                                <td>Musicians</td>
+                                <td>0</td>
+                                <td>The_Rolling_Stones</td>
+                                <td role="cell" class="text-center"><button id="actionButton" type="button" class="button button5 collapsible">+</button></td>
+                            </tr>       
+                            <tr>
+                                <td colspan="8" id="info">
+                                    <table>
+                                        <tr>
+                                          <td style="font-weight: 700 !important;">Time In:</td>
+                                          <td>8:30 AM</td>
+                                        </tr>
+                                        <tr>
+                                          <td style="font-weight: 700 !important;">Time Out:</td>
+                                          <td>5:30 PM</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2000</td>
+                                <td>1</td>
+                                <td>Julia Roberts</td>
+                                <td>United States</td>
+                                <td>Actor</td>
+                                <td>0</td>
+                                <td>Julia_Roberts</td>
+                                <td role="cell" class="text-center"><button id="actionButton" type="button" class="button button5 collapsible">+</button></td>
+                            </tr>       
+                            <tr>
+                                <td colspan="8" id="info">
+                                    <table>
+                                        <tr>
+                                          <td style="font-weight: 700 !important;">Time In:</td>
+                                          <td>8:30 AM</td>
+                                        </tr>
+                                        <tr>
+                                          <td style="font-weight: 700 !important;">Time Out:</td>
+                                          <td>5:30 PM</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2000</td>
+                                <td>2</td>
+                                <td>George Lucas</td>
+                                <td>United States</td>
+                                <td>Filmmaker</td>
+                                <td>0</td>
+                                <td>George_Lucas</td>
+                                <td role="cell" class="text-center"><button id="actionButton" type="button" class="button button5 collapsible">+</button></td>
+                            </tr>       
+                            <tr>
+                                <td colspan="8" id="info">
+                                    <table>
+                                        <tr>
+                                          <td style="font-weight: 700 !important;">Time In:</td>
+                                          <td>8:30 AM</td>
+                                        </tr>
+                                        <tr>
+                                          <td style="font-weight: 700 !important;">Time Out:</td>
+                                          <td>5:30 PM</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2000</td>
+                                <td>3</td>
+                                <td>Oprah Winfrey</td>
+                                <td>United States</td>
+                                <td>Television Personality</td>
+                                <td>0</td>
+                                <td>Oprah_Winfrey</td>
+                                <td role="cell" class="text-center"><button id="actionButton" type="button" class="button button5 collapsible">+</button></td>
+                            </tr>       
+                            <tr>
+                                <td colspan="8" id="info">
+                                    <table>
+                                        <tr>
+                                          <td style="font-weight: 700 !important;">Time In:</td>
+                                          <td>8:30 AM</td>
+                                        </tr>
+                                        <tr>
+                                          <td style="font-weight: 700 !important;">Time Out:</td>
+                                          <td>5:30 PM</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2000</td>
+                                <td>4</td>
+                                <td>Tom Hanks</td>
+                                <td>United States</td>
+                                <td>Actor</td>
+                                <td>0</td>
+                                <td>Tom_Hanks</td>
+                                <td role="cell" class="text-center"><button id="actionButton" type="button" class="button button5 collapsible">+</button></td>
+                            </tr>       
+                            <tr>
+                                <td colspan="8" id="info">
+                                    <table>
+                                        <tr>
+                                          <td style="font-weight: 700 !important;">Time In:</td>
+                                          <td>8:30 AM</td>
+                                        </tr>
+                                        <tr>
+                                          <td style="font-weight: 700 !important;">Time Out:</td>
+                                          <td>5:30 PM</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>	
+                            <tr>
+                                <td>2000</td>
+                                <td>5</td>
+                                <td>Michael Jordan</td>
+                                <td>United States</td>
+                                <td>Sportsperson (Basketball)</td>
+                                <td>0</td>
+                                <td>Michael_Jordan</td>
+                                <td role="cell" class="text-center"><button id="actionButton" type="button" class="button button5 collapsible">+</button></td>
+                            </tr>       
+                            <tr>
+                                <td colspan="8" id="info">
+                                    <table>
+                                        <tr>
+                                          <td style="font-weight: 700 !important;">Time In:</td>
+                                          <td>8:30 AM</td>
+                                        </tr>
+                                        <tr>
+                                          <td style="font-weight: 700 !important;">Time Out:</td>
+                                          <td>5:30 PM</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2000</td>
+                                <td>6</td>
+                                <td>The Rolling Stones</td>
+                                <td>United Kingdom</td>
+                                <td>Musicians</td>
+                                <td>0</td>
+                                <td>The_Rolling_Stones</td>
+                                <td role="cell" class="text-center"><button id="actionButton" type="button" class="button button5 collapsible">+</button></td>
+                            </tr>       
+                            <tr>
+                                <td colspan="8" id="info">
+                                    <table>
+                                        <tr>
+                                          <td style="font-weight: 700 !important;">Time In:</td>
+                                          <td>8:30 AM</td>
+                                        </tr>
+                                        <tr>
+                                          <td style="font-weight: 700 !important;">Time Out:</td>
+                                          <td>5:30 PM</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2000</td>
+                                <td>7</td>
+                                <td>Tiger Woods</td>
+                                <td>United States</td>
+                                <td>Sportsperson (Golf)</td>
+                                <td>0</td>
+                                <td>Tiger_Woods</td>
+                                <td role="cell" class="text-center"><button id="actionButton" type="button" class="button button5 collapsible">+</button></td>
+                            </tr>       
+                            <tr>
+                                <td colspan="8" id="info">
+                                    <table>
+                                        <tr>
+                                          <td style="font-weight: 700 !important;">Time In:</td>
+                                          <td>8:30 AM</td>
+                                        </tr>
+                                        <tr>
+                                          <td style="font-weight: 700 !important;">Time Out:</td>
+                                          <td>5:30 PM</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2000</td>
+                                <td>8</td>
+                                <td>Backstreet Boys</td>
+                                <td>United States</td>
+                                <td>Musicians</td>
+                                <td>0</td>
+                                <td>Backstreet_Boys</td>
+                                <td role="cell" class="text-center"><button id="actionButton" type="button" class="button button5 collapsible">+</button></td>
+                            </tr>       
+                            <tr>
+                                <td colspan="8" id="info">
+                                    <table>
+                                        <tr>
+                                          <td style="font-weight: 700 !important;">Time In:</td>
+                                          <td>8:30 AM</td>
+                                        </tr>
+                                        <tr>
+                                          <td style="font-weight: 700 !important;">Time Out:</td>
+                                          <td>5:30 PM</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2000</td>
+                                <td>9</td>
+                                <td>Cher</td>
+                                <td>United States</td>
+                                <td>Musician</td>
+                                <td>0</td>
+                                <td>Cher</td>
+                                <td role="cell" class="text-center"><button id="actionButton" type="button" class="button button5 collapsible">+</button></td>
+                            </tr>       
+                            <tr>
+                                <td colspan="8" id="info">
+                                    <table>
+                                        <tr>
+                                          <td style="font-weight: 700 !important;">Time In:</td>
+                                          <td>8:30 AM</td>
+                                        </tr>
+                                        <tr>
+                                          <td style="font-weight: 700 !important;">Time Out:</td>
+                                          <td>5:30 PM</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2000</td>
+                                <td>10</td>
+                                <td>Steven Spielberg</td>
+                                <td>United States</td>
+                                <td>Filmmaker</td>
+                                <td>0</td>
+                                <td>Steven_Spielberg</td>
+                                <td role="cell" class="text-center"><button id="actionButton" type="button" class="button button5 collapsible">+</button></td>
+                            </tr>       
+                            <tr>
+                                <td colspan="8" id="info">
+                                    <table>
+                                        <tr>
+                                          <td style="font-weight: 700 !important;">Time In:</td>
+                                          <td>8:30 AM</td>
+                                        </tr>
+                                        <tr>
+                                          <td style="font-weight: 700 !important;">Time Out:</td>
+                                          <td>5:30 PM</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div id="pagination-button">
+                <nav>
+                    <ul id="credit" class="pagination">
+                        <li data-page="prev" onclick="show(this);">
+                            <span> Previous </span>
+                        </li>
+                        <li data-page="next" id="prev" onclick="show(this);">
+                            <span> Next </span>
+                        </li>
+                    </ul>
+                    <div style="float: right;" id="showing-entries"></div>
+                </nav>
+            </div>
+        </div>
+        <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+        
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+              content.style.display = "none";
+            } else {
+              content.style.display = "block";
+            }
+          });
+        }
+        </script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script><script  src="./script.js"></script>
+    </body>
+</html>

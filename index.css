@@ -1,0 +1,332 @@
+* {
+    box-sizing: border-box;
+  }
+  
+body {
+    background: #f7fafc;
+    padding: 0px 5%;
+    font-family: 'Roboto';
+}
+
+.button {
+    background-color: #03dbfc; /* Green */
+    border: 1px solid #0384fc;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+.button5 {border-radius: 50%;}
+
+#task-table {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #ddd;
+    font-size: 14px;
+  }
+  
+  #task-table th, #task-table td {
+    text-align: left; /* Left-align text */
+    padding: 12px; /* Add padding */
+  }
+  
+  #task-table tr {
+    /* Add a bottom border to all table rows */
+    border-bottom: 1px solid #ddd;
+  }
+  
+  #task-table thead, #task-table tr:hover {
+    /* Add a grey background color to the table header and on hover */
+    background-color: #f1f1f1;
+    border-bottom: 3px solid #dee2e6 !important;
+  }
+
+  #task-table th a,
+  #task-table td a { 
+	display: block;
+	width: 100%;
+    color: #000;
+	text-decoration: none;
+}
+
+.table-caption {
+    padding: 0.5rem 0 !important;
+    border-bottom: 1px solid #dddddd;
+    justify-content: center !important;
+} 
+
+
+#task-table td[colspan] {
+    padding-top: 0; padding-bottom: 0;
+  } 
+  
+ #task-table td[colspan] table {
+    padding-top: 1rem; padding-bottom: 1rem;
+  }
+
+.panel {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border-radius: 0.25rem;
+    padding: 0 0.5rem !important;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.20) !important;
+}
+
+.margin-bottom-1 {
+    margin-bottom: 0.3rem !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.label-height {
+    font-size: calc(1.05rem + 0.12vw);
+    padding: 0.3rem 0.5rem !important;
+    border-radius: 5px;
+}
+
+.field-border {
+    border: 1px solid #dddddd;
+    padding: 0.65rem 0.8rem !important;
+    border-radius: 5px;
+    margin: 1rem 0 !important;
+}
+
+
+.InputAddOn {
+    display: flex;
+}
+
+.InputAddOn2 {
+    display: flex;
+}
+  
+.InputAddOn-field1 {
+    flex: 1;
+    border-radius: 0 5px 5px 0;
+    border: 1px solid #dddddd;
+}
+
+.InputAddOn-field2 {
+    flex: 1;
+    border: 1px solid #dddddd;
+    border-left: 0 !important;
+    border-right: 0 !important;
+}
+
+.InputAddOn-field {
+    flex: 1;
+    border-left: 0 !important;
+    border: 1px solid #dddddd;
+    padding: 0.5rem 0 !important;
+    border-radius: 0 5px 5px 0;
+}
+  
+.InputAddOn-item {
+    background-color: #e9ecef;
+    border: 1px solid #dddddd;
+    border-radius: 5px 0 0 5px;
+    padding: 0.5rem 0.5rem !important;
+}
+
+.InputAddOn-item2 {
+    background-color: #e9ecef;
+    border: 1px solid #dddddd;
+    border-radius: 5px 0 0 5px;
+    padding: 0.5rem !important;
+}
+
+.pagination {
+    display: inline-block;
+    cursor: pointer;
+}
+  
+.pagination li {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    list-style-type: none;
+}
+  
+.pagination li.active {
+    color: #fff;
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+  
+.pagination li:hover:not(.active) {background-color: #ddd;}
+  
+.pagination li:first-child {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+  
+.pagination li:last-child {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+#pagination-button {
+    margin-left: -1rem !important;
+}
+
+#showing-entries {
+    margin: 1.5rem 1rem !important;
+    color: #034eff;
+}
+
+#entries-label {
+    padding: 0.5rem !important;
+    background-color: #e9ecef;
+}
+
+#table-title {
+    display: inline-block;
+    margin: 0.5rem 1rem !important;
+    font-size: calc(1.05rem + 0.12vw);
+    font-weight: 700 !important;
+}
+
+#header-task{
+    margin-bottom: 1rem !important;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: block;
+    text-align: center !important;
+}
+
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+}
+
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+th a.sort-by { 
+	padding-right: 18px;
+	position: relative;
+}
+a.sort-by:before,
+a.sort-by:after {
+	border: 4px solid transparent;
+	content: "";
+	display: block;
+	height: 0;
+	right: 5px;
+	top: 50%;
+	position: absolute;
+	width: 0;
+}
+a.sort-by:before {
+	border-bottom-color: #666;
+	margin-top: -9px;
+}
+a.sort-by:after {
+	border-top-color: #666;
+	margin-top: 1px;
+}
+
+.x-view {
+    overflow-x:auto;
+}
+
+.y-view {
+    display: none;
+}
+
+@media only screen and (min-width: 1060px) {
+    .view-details {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1060px) {
+  [class*="col-"] {
+    width: 100%;
+  }
+}
+
+
+@media only screen and (max-width: 1060px), (min-device-width: 768px) and (max-device-width: 1024px)  {
+    #myDiv thead, #myDiv tbody, #myDiv th, #myDiv td, #myDiv tr {
+        width: 100%;
+		display: block;
+	}
+
+	#myDiv thead tr {
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+
+    #myDiv tr {
+        margin: 0 0 1rem 0;
+		width: 100%;
+    }
+      
+    #myDiv tr:nth-child(odd) {
+      background: #ccc;
+    }
+    
+	#myDiv td {
+		border: none;
+		border-bottom: 1px solid #eee;
+		position: relative;
+        text-align: right;
+	}
+
+	#myDiv td:before {
+		position: absolute;
+		top: 0;
+		left: 6px;
+		width: 45%;
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
+		padding-right: 10px;
+		white-space: nowrap;
+	}
+
+	#myDiv td:nth-of-type(1):before { content: "Year";  text-align: left; font-weight: 700 !important;}
+	#myDiv td:nth-of-type(2):before { content: "Rank";  text-align: left; font-weight: 700 !important;}
+	#myDiv td:nth-of-type(3):before { content: "Recipient";  text-align: left; font-weight: 700 !important;}
+	#myDiv td:nth-of-type(4):before { content: "Country";  text-align: left; font-weight: 700 !important;}
+	#myDiv td:nth-of-type(5):before { content: "Career"; text-align: left; font-weight: 700 !important;}
+	#myDiv td:nth-of-type(6):before { content: "Tied";  text-align: left; font-weight: 700 !important;}
+	#myDiv td:nth-of-type(7):before { content: "Title";  text-align: left; font-weight: 700 !important;}
+
+    #pagination-button {
+        text-align: center;
+        width: 100%;
+    }
+
+    #showing-entries {
+        width: 100%;
+        float: center;
+        text-align: center;
+    }
+}
